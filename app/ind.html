@@ -1,0 +1,30 @@
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    var arr,arr1;  
+jQuery.getJSON('http://192.168.2.250:5000/json_formatter',function(data){
+  arr = data.results;
+
+
+    //   var f1;
+      jQuery.getJSON('http://192.168.2.250:5000/get_img',function(data){
+          arr1 = data.res;
+          // for(var i=0;i<10;i++){
+      for (const key in arr1) {
+          x = arr1[key];
+          respon = arr[x];
+          console.log(arr.length);
+          
+          var c = document.createElement("img");
+          c.src= respon;
+          document.getElementsByTagName("body")[0].appendChild(c);
+      }
+    // }
+      });
+      });
+</script>
